@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchAccessToken } from '../api/spotify';
-import { saveAuth } from '../utils/auth';
+import { fetchAccessToken } from '../../api/spotify';
+import { saveAuth } from '../../utils/auth';
+import './Login.css';
 
 const Login = () => {
   const [clientId, setClientId] = useState('');

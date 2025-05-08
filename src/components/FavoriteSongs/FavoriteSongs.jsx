@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './FavoriteSongs.css';
 
 const FavoriteSongs = () => {
   const [favoriteTracks, setFavoriteTracks] = useState([]);

@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './components/Login';
-import ArtistSearch from './components/ArtistSearch';
-import ArtistDetail from './components/ArtistDetail';
-import AlbumDetail from './components/AlbumDetail';
-import FavoriteSongs from './components/FavoriteSongs';
-import Header from './components/Header';
+import Login from './components/Login/Login';
+import ArtistSearch from './components/ArtistSearch/ArtistSearch';
+import ArtistDetail from './components/ArtistDetail/ArtistDetail';
+import AlbumDetail from './components/AlbumDetail/AlbumDetail';
+import FavoriteSongs from './components/FavoriteSongs/FavoriteSongs';
+import Header from './components/Header/Header';
 import './App.css';
 
 const auth = localStorage.getItem("spotifyAuth");

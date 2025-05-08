@@ -1,0 +1,173 @@
+/* Contenedor principal de búsqueda */
+.search-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #121212, #282828);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+/* Título de la página */
+.search-title {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Formulario de búsqueda */
+.search-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #404040;
+  color: #ffffff;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: #505050;
+  box-shadow: 0 0 0 2px #1db954;
+}
+
+.search-button {
+  width: 200px;
+  padding: 1rem;
+  background-color: #1db954;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #1ed760;
+  transform: translateY(-2px);
+}
+
+/* Lista de artistas */
+.artists-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.artist-item {
+  background-color: #282828;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.artist-item:hover {
+  background-color: #383838;
+  transform: translateX(10px);
+}
+
+.artist-thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.artist-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.artist-type {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.no-results {
+  text-align: center;
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-container {
+    padding: 1rem;
+  }
+  .search-form {
+    max-width: 100%;
+  }
+  .artists-list {
+    max-width: 100%;
+  }
+  .artist-item {
+    padding: 1rem;
+  }
+  .artist-thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-title {
+    font-size: 2rem;
+    margin-top: 7rem;
+  }
+  .search-form {
+    gap: 0.5rem;
+  }
+  .artist-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .artist-thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+}
