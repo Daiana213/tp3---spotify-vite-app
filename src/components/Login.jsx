@@ -21,30 +21,36 @@ const Login = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Login – Ingresa tus credenciales de Spotify</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>CLIENT_ID:</label>
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <h2>Login – Ingresa tus credenciales de Spotify</h2>
+        <div className="form-group">
+          <label htmlFor="clientId">CLIENT_ID:</label>
           <input
+            id="clientId"
             type="text"
             value={clientId}
             onChange={(e) => setClientId(e.target.value)}
             required
+            placeholder="Ingresa tu Client ID"
           />
         </div>
-        <div>
-          <label>CLIENT_SECRET:</label>
+        <div className="form-group">
+          <label htmlFor="clientSecret">CLIENT_SECRET:</label>
           <input
+            id="clientSecret"
             type="password"
             value={clientSecret}
             onChange={(e) => setClientSecret(e.target.value)}
             required
+            placeholder="Ingresa tu Client Secret"
           />
         </div>
-        <button type="submit">Obtener Token y Continuar</button>
+        <button type="submit" className="login-button">
+          Obtener Token y Continuar
+        </button>
+        {error && <p className="error-message">{error}</p>}
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };

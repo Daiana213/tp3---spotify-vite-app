@@ -9,42 +9,88 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #121212;
   color: #ffffff;
+  min-height: 100vh;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Estilos del header */
 header {
   background-color: #282828;
-  padding: 1rem;
+  padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav-left {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+.spotify-logo {
+  height: 40px;
+  width: auto;
 }
 
 nav a {
   color: #ffffff;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 nav a:hover {
   background-color: #1db954;
+  transform: translateY(-2px);
 }
 
 /* Estilos para los componentes principales */
 .main-content {
-  padding: 2rem;
+  padding-top: 100px;
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* Estilos para botones */
@@ -239,5 +285,102 @@ button:hover {
 
   .artist-name {
     font-size: 1.25rem;
+  }
+}
+
+/* Estilos para el login */
+.login-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #121212, #282828);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.login-form {
+  background-color: #282828;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.login-form h2 {
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: #b3b3b3;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #404040;
+  border-radius: 4px;
+  background-color: #404040;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1db954;
+}
+
+.login-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1db954;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #1ed760;
+}
+
+.error-message {
+  color: #ff4444;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Media queries para el login */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 1.5rem;
+  }
+
+  .login-form h2 {
+    font-size: 1.5rem;
   }
 }
