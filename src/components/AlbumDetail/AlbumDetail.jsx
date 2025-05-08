@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getAlbum } from '../api/spotify';
-import { getAuth } from '../utils/auth';
+import { getAlbumDetails } from "/src/api/spotify";
+import { getAuth } from '../../utils/auth';
 import './AlbumDetail.css';
 
 const AlbumDetail = () => {
@@ -13,7 +13,7 @@ const AlbumDetail = () => {
   useEffect(() => {
     const fetchAlbum = async () => {
       try {
-        const data = await getAlbum(id, auth.token);
+        const data = await getAlbumDetails(id, auth.token);
         setAlbum(data);
       } catch (error) {
         console.error(error);
