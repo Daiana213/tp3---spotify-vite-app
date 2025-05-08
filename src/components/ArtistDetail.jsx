@@ -63,44 +63,69 @@ const ArtistDetail = () => {
       <h2>Detalle Artista</h2>
       {artist ? (
         <div>
-          {artist.images && artist.images.length > 0 && (
-            <img
-              src={artist.images[0].url}
-              alt={artist.name}
-              width="100"
-              height="100"
-              style={{ borderRadius: "50%" }}
-            />
+          <div className="artist-profile">
+            {artist.images && artist.images.length > 0 && (
+              <img
+                src={artist.images[0].url}
+                alt={artist.name}
+                className="artist-image"
+              />
+            )}
+            <div className="artist-info">
+              <h3 className="artist-name">{artist.name}</h3>
+              <button 
+                onClick={toggleFavorite}
+                className={`favorite-button ${isFavorite ? 'active' : ''}`}
+              >
+                {isFavorite ? "Quitar de Favoritos" : "Agregar a Favoritos"}
+              </button>
+            </div>
+          </div>
+
+          <h3 className="albums-section">Álbumes</h3>
+          {albums.length === 0 ? (
+            <p>No se encontraron álbumes</p>
+          ) : (
+            <div className="track-list">
+              {albums.map((album) => (
+                <div key={album.id} className="track-item">
+                  {album.images && album.images.length > 0 && (
+                    <img 
+                      src={album.images[0].url} 
+                      alt={album.name} 
+                      style={{ 
+                        width: '60px', 
+                        height: '60px', 
+                        borderRadius: '4px',
+                        objectFit: 'cover'
+                      }} 
+                    />
+                  )}
+                  <div className="track-info">
+                    <span className="track-name">{album.name}</span>
+                    <span className="track-artist">
+                      {album.release_date.substring(0, 4)}
+                    </span>
+                  </div>
+                  <div className="track-actions">
+                    <button onClick={() => navigate(`/album/${album.id}`)}>
+                      Ver Detalle
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
-          <h3>{artist.name}</h3>
-          <button onClick={toggleFavorite}>
-            {isFavorite ? "Quitar de Favoritos" : "Agregar a Favoritos"}
-          </button>
         </div>
       ) : (
         <p>Cargando información del artista...</p>
       )}
-      <h3>Álbumes</h3>
-      {albums.length === 0 ? (
-        <p>No se encontraron álbumes</p>
-      ) : (
-        <ul style={{ listStyle: "none", padding: 0 }}>
-          {albums.map((album) => (
-            <li key={album.id} style={{ margin: "10px 0", display: "flex", alignItems: "center" }}>
-              {album.images && album.images.length > 0 && (
-                <img src={album.images[0].url} alt={album.name} width="50" height="50" />
-              )}
-              <span style={{ marginLeft: "10px" }}>
-                {album.name} ({album.release_date.substring(0, 4)})
-              </span>
-              <button onClick={() => navigate(`/album/${album.id}`)} style={{ marginLeft: "10px" }}>
-                Ver Detalle
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-      <button onClick={() => navigate("/search")}>Volver a Búsqueda</button>
+      <button 
+        onClick={() => navigate("/search")} 
+        className="back-button"
+      >
+        Volver a Búsqueda
+      </button>
     </div>
   );
 };

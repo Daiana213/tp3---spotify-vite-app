@@ -62,3 +62,182 @@ button {
 button:hover {
   background-color: #1ed760;
 }
+
+/* Estilos para listas de canciones */
+.track-list {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.track-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #282828;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.track-item:hover {
+  background-color: #383838;
+}
+
+.track-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.track-name {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.track-artist {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+}
+
+.track-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Media queries para responsive */
+@media (max-width: 768px) {
+  .track-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .track-image {
+    margin: 0 auto;
+  }
+
+  .track-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .track-list {
+    padding: 0.5rem;
+  }
+
+  .track-item {
+    padding: 0.75rem;
+  }
+
+  .track-image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Estilos para el perfil del artista */
+.artist-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #282828;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.artist-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1db954;
+}
+
+.artist-info {
+  text-align: center;
+}
+
+.artist-name {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.favorite-button {
+  background-color: #282828;
+  border: 2px solid #1db954;
+  color: #1db954;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorite-button.active {
+  background-color: #1db954;
+  color: #ffffff;
+}
+
+.back-button {
+  margin-top: 2rem;
+  background-color: #282828;
+  border: 2px solid #1db954;
+  color: #1db954;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #1db954;
+  color: #ffffff;
+}
+
+.albums-section {
+  margin-bottom: 1.5rem;
+}
+
+/* Media queries para el perfil del artista */
+@media (max-width: 768px) {
+  .artist-profile {
+    padding: 1.5rem;
+  }
+
+  .artist-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .artist-name {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-profile {
+    padding: 1rem;
+  }
+
+  .artist-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .artist-name {
+    font-size: 1.25rem;
+  }
+}

@@ -22,23 +22,30 @@ const FavoriteSongs = () => {
       {favoriteTracks.length === 0 ? (
         <p>No hay canciones favoritas</p>
       ) : (
-        <ul style={{ listStyle: "none", padding: 0 }}>
+        <div className="track-list">
           {favoriteTracks.map((track) => (
-            <li key={track.id} style={{ margin: "10px 0" }}>
-              <strong>{track.name}</strong> – {track.artist} ({track.album})
-              <button onClick={() => removeFavorite(track.id)} style={{ marginLeft: "10px" }}>
-                Eliminar
-              </button>
-              {track.albumId && (
-                <button onClick={() => navigate(`/album/${track.albumId}`)} style={{ marginLeft: "10px" }}>
-                  Ver Álbum
+            <div key={track.id} className="track-item">
+              <div className="track-info">
+                <span className="track-name">{track.name}</span>
+                <span className="track-artist">{track.artist} - {track.album}</span>
+              </div>
+              <div className="track-actions">
+                <button onClick={() => removeFavorite(track.id)}>
+                  Eliminar
                 </button>
-              )}
-            </li>
+                {track.albumId && (
+                  <button onClick={() => navigate(`/album/${track.albumId}`)}>
+                    Ver Álbum
+                  </button>
+                )}
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
-      <button onClick={() => navigate("/search")}>Volver a Búsqueda</button>
+      <button onClick={() => navigate("/search")} style={{ marginTop: '1rem' }}>
+        Volver a Búsqueda
+      </button>
     </div>
   );
 };

@@ -50,27 +50,47 @@ const AlbumDetail = () => {
       <h2>Detalle del Álbum</h2>
       {album ? (
         <div>
-          {album.images && album.images.length > 0 && (
-            <img src={album.images[0].url} alt={album.name} width="200" />
-          )}
-          <h3>{album.name}</h3>
-          <p>Artista: {album.artists[0].name}</p>
+          <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem', alignItems: 'center' }}>
+            {album.images && album.images.length > 0 && (
+              <img 
+                src={album.images[0].url} 
+                alt={album.name} 
+                style={{ 
+                  width: '200px', 
+                  height: '200px', 
+                  objectFit: 'cover',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 8px rgba(0,0,0,0.3)'
+                }} 
+              />
+            )}
+            <div>
+              <h3 style={{ marginBottom: '0.5rem' }}>{album.name}</h3>
+              <p style={{ color: '#b3b3b3' }}>Artista: {album.artists[0].name}</p>
+              <p style={{ color: '#b3b3b3' }}>Fecha de lanzamiento: {album.release_date}</p>
+            </div>
+          </div>
           <h4>Lista de Canciones:</h4>
-          <ul style={{ listStyle: "none", padding: 0 }}>
+          <div className="track-list">
             {album.tracks.items.map((track) => (
-              <li key={track.id} style={{ margin: "5px 0" }}>
-                {track.name}
-                <button onClick={() => toggleFavoriteTrack(track)} style={{ marginLeft: "10px" }}>
-                  {isTrackFavorite(track.id) ? "Quitar de Favoritos" : "Agregar a Favoritos"}
-                </button>
-              </li>
+              <div key={track.id} className="track-item">
+                <div className="track-info">
+                  <span className="track-name">{track.name}</span>
+                  <span className="track-artist">{album.artists[0].name}</span>
+                </div>
+                <div className="track-actions">
+                  <button onClick={() => toggleFavoriteTrack(track)}>
+                    {isTrackFavorite(track.id) ? "Quitar de Favoritos" : "Agregar a Favoritos"}
+                  </button>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       ) : (
         <p>Cargando información del álbum...</p>
       )}
-      <button onClick={() => navigate(-1)}>Volver</button>
+      <button onClick={() => navigate(-1)} style={{ marginTop: '1rem' }}>Volver</button>
     </div>
   );
 };
