@@ -1,6 +1,5 @@
 header {
   background-color: #282828;
-  padding: 1rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   width: 100%;
   position: fixed;
@@ -22,6 +21,7 @@ nav {
   padding: 0 1rem;
   flex-wrap: wrap;
   gap: 1rem;
+  position: relative;
 }
 
 .nav-left {
@@ -29,16 +29,19 @@ nav {
   gap: 1rem;
   align-items: center;
   flex-wrap: wrap;
+  position: absolute;
+  left: 1rem;
 }
 
 .nav-center {
-  position: relative;
-  left: 0;
-  transform: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-right {
-  margin-left: auto;
+  position: absolute;
+  right: 1rem;
 }
 
 .spotify-logo {
@@ -73,18 +76,25 @@ nav a:hover {
     justify-content: center;
   }
   .nav-left {
+    position: static;
     justify-content: center;
     width: 100%;
+    order: 2;
   }
   .nav-center {
+    position: static;
+    transform: none;
     width: 100%;
     text-align: center;
+    order: 1;
   }
   .nav-right {
+    position: static;
     margin: 0;
     width: 100%;
     display: flex;
     justify-content: center;
+    order: 3;
   }
   .spotify-logo {
     height: 30px;

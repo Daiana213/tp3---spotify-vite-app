@@ -44,7 +44,10 @@ const FavoriteSongs = () => {
           ))}
         </div>
       )}
-      <button onClick={() => navigate("/search")} style={{ marginTop: '1rem' }}>
+      <button 
+        onClick={() => navigate("/search")} 
+        className="back-to-search-btn"
+      >
         Volver a Búsqueda
       </button>
     </div>

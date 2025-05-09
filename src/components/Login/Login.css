@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
   background: linear-gradient(to bottom, #121212, #282828);
   position: fixed;
   top: 0;

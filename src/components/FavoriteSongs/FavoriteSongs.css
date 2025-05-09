@@ -77,6 +77,38 @@
   color: #fff;
 }
 
+.back-to-search-btn {
+  background-color: transparent;
+  border: 2px solid #1db954;
+  color: #1db954;
+  padding: 0.8rem 2rem;
+  border-radius: 500px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+  width: fit-content;
+}
+
+.back-to-search-btn:hover {
+  background-color: #1db954;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+}
+
+.back-to-search-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(29, 185, 84, 0.2);
+}
+
 @media (max-width: 768px) {
   .favorite-songs-container {
     padding: 1rem;
@@ -89,5 +121,16 @@
   .favorite-image {
     width: 50px;
     height: 50px;
+  }
+  .back-to-search-btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-search-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
   }
 }
