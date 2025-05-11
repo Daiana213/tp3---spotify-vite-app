@@ -9,6 +9,8 @@ header {
   min-height: 80px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
 }
 
 nav {
@@ -20,28 +22,18 @@ nav {
   margin: 0 auto;
   padding: 0 1rem;
   flex-wrap: wrap;
-  gap: 1rem;
-  position: relative;
+  gap: 2rem;
 }
 
-.nav-left {
+.nav-left, .nav-right {
   display: flex;
-  gap: 1rem;
   align-items: center;
-  flex-wrap: wrap;
-  position: absolute;
-  left: 1rem;
+  gap: 1rem;
 }
 
 .nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.nav-right {
-  position: absolute;
-  right: 1rem;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .spotify-logo {
@@ -53,11 +45,12 @@ nav a {
   color: #ffffff;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: 25px;
+  border-radius: 20px;
   transition: all 0.3s ease;
   font-weight: 500;
   font-size: 1rem;
   white-space: nowrap;
+  display: inline-block;
 }
 
 nav a:hover {
@@ -71,37 +64,26 @@ nav a:hover {
     padding: 0.5rem;
     min-height: 60px;
   }
+  
   nav {
-    padding: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-left, .nav-center, .nav-right {
+    width: 100%;
     justify-content: center;
   }
-  .nav-left {
-    position: static;
-    justify-content: center;
-    width: 100%;
-    order: 2;
-  }
-  .nav-center {
-    position: static;
-    transform: none;
-    width: 100%;
-    text-align: center;
-    order: 1;
-  }
-  .nav-right {
-    position: static;
-    margin: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    order: 3;
-  }
+
   .spotify-logo {
     height: 30px;
   }
+
   nav a {
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
+    border-radius: 15px;
   }
 }
 
@@ -109,19 +91,24 @@ nav a:hover {
   header {
     min-height: auto;
   }
+
   nav {
     flex-direction: column;
     gap: 0.5rem;
   }
+
   .nav-left, .nav-center, .nav-right {
     width: 100%;
     justify-content: center;
   }
+
   .spotify-logo {
     height: 25px;
   }
+
   nav a {
     padding: 0.3rem 0.6rem;
     font-size: 0.8rem;
+    border-radius: 12px;
   }
 }
