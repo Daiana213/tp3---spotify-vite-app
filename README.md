@@ -13,6 +13,7 @@
 - Navegación entre vistas usando React Router
 
 Enlace a la aplicación: https://daiana213.github.io/tp3---spotify-vite-app/
+
 CREDENCIALES:
 - CLIENT_ID: 8eeee12eba9643b4ae1243a9feb82c02
 - CLIENT_SECRET: 75d58b03e96844b78c51d87db430f3a3
