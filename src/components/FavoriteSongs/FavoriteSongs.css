@@ -6,13 +6,6 @@
   margin-right: auto;
 }
 
-h2 {
-  color: #ffffff;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
-}
-
 .track-list {
   display: flex;
   flex-direction: column;

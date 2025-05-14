@@ -4,50 +4,88 @@
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  margin-top: 10rem;
+  margin-top: 6rem;
   margin-bottom: 3rem;
-  padding: 4rem;
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
-  min-height: 600px;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(24, 24, 24, 0.8);
+  border-radius: 16px;
 }
 
-.artist-profile::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  filter: blur(20px);
-  transform: scale(1.1);
-  z-index: -2;
-}
-
-.artist-profile::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(18, 18, 18, 0.9), rgba(40, 40, 40, 0.95));
-  z-index: -1;
-}
-
-.artist-image {
+.artist-profile img {
   width: 400px;
   height: 400px;
-  border-radius: 12px;
+  border-radius: 50%;
   object-fit: cover;
   border: 6px solid #1db954;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 2rem;
+}
+
+.artist-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.7);
+}
+
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.artist-name {
+  font-size: 3.5rem;
+  color: #ffffff;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .artist-profile {
+    padding: 2rem;
+    margin-top: 5rem;
+    gap: 2rem;
+  }
+
+  .artist-image {
+    width: 300px;
+    height: 300px;
+    border-width: 4px;
+  }
+
+  .artist-name {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-profile {
+    padding: 1.5rem;
+    margin-top: 4rem;
+    gap: 1.5rem;
+  }
+
+  .artist-image {
+    width: 250px;
+    height: 250px;
+    border-width: 3px;
+  }
+
+  .artist-name {
+    font-size: 2rem;
+  }
 }
 
 .artist-image:hover {
