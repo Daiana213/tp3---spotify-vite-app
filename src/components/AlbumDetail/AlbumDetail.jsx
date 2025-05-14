@@ -9,6 +9,7 @@ const AlbumDetail = () => {
   const navigate = useNavigate();
   const auth = getAuth();
   const [album, setAlbum] = useState(null);
+  const [favoriteTracks, setFavoriteTracks] = useState([]);
 
   useEffect(() => {
     const fetchAlbum = async () => {
@@ -20,7 +21,37 @@ const AlbumDetail = () => {
       }
     };
     fetchAlbum();
+    // Cargar canciones favoritas del localStorage
+    const favs = JSON.parse(localStorage.getItem("favoriteTracks") || "[]");
+    setFavoriteTracks(favs);
   }, [id, auth.token]);
+
+  const toggleFavorite = (track) => {
+    const favs = JSON.parse(localStorage.getItem("favoriteTracks") || "[]");
+    const trackWithDetails = {
+      id: track.id,
+      name: track.name,
+      artist: album.artists[0].name,
+      album: album.name,
+      albumId: album.id
+    };
+
+    const isCurrentlyFavorite = favs.some(fav => fav.id === track.id);
+    let newFavs;
+
+    if (isCurrentlyFavorite) {
+      newFavs = favs.filter(fav => fav.id !== track.id);
+    } else {
+      newFavs = [...favs, trackWithDetails];
+    }
+
+    localStorage.setItem("favoriteTracks", JSON.stringify(newFavs));
+    setFavoriteTracks(newFavs);
+  };
+
+  const isFavorite = (trackId) => {
+    return favoriteTracks.some(track => track.id === trackId);
+  };
 
   if (!album) {
     return <div className="album-detail-container">Cargando álbum...</div>;
@@ -48,10 +79,18 @@ const AlbumDetail = () => {
         {album.tracks.items.map(track => (
           <li key={track.id} className="track-item">
             <span className="track-name">{track.name}</span>
-            <span className="track-duration">
-              {Math.floor(track.duration_ms / 60000)}:
-              {String(Math.floor((track.duration_ms % 60000) / 1000)).padStart(2, '0')}
-            </span>
+            <div className="track-actions">
+              <span className="track-duration">
+                {Math.floor(track.duration_ms / 60000)}:
+                {String(Math.floor((track.duration_ms % 60000) / 1000)).padStart(2, '0')}
+              </span>
+              <button 
+                className={`favorite-button ${isFavorite(track.id) ? 'active' : ''}`}
+                onClick={() => toggleFavorite(track)}
+              >
+                {isFavorite(track.id) ? 'Quitar de favoritos' : 'Agregar a favoritos'}
+              </button>
+            </div>
           </li>
         ))}
       </ul>

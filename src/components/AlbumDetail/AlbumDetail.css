@@ -86,6 +86,34 @@
   font-size: 0.95rem;
 }
 
+.track-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.favorite-button {
+  background-color: transparent;
+  border: 2px solid #1db954;
+  color: #1db954;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.favorite-button:hover {
+  background-color: #1db954;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.favorite-button.active {
+  background-color: #1db954;
+  color: #ffffff;
+}
+
 @media (max-width: 768px) {
   .album-header {
     flex-direction: column;
