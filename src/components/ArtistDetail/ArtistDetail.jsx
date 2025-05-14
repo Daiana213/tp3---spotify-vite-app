@@ -53,7 +53,11 @@ const ArtistDetail = () => {
       localStorage.setItem("favoriteArtists", JSON.stringify(newFavs));
       setIsFavorite(false);
     } else {
-      const newFav = artist || { id, name: "Desconocido" };
+      const newFav = {
+        id: artist.id,
+        name: artist.name,
+        image: artist.images[0]?.url || 'https://via.placeholder.com/200'
+      };
       localStorage.setItem("favoriteArtists", JSON.stringify([...favs, newFav]));
       setIsFavorite(true);
     }

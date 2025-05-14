@@ -1,0 +1,78 @@
+.favorite-artists-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.artist-card {
+  background-color: #282828;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-5px);
+}
+
+.artist-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.artist-name {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.artist-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.view-button, .remove-button {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.view-button {
+  background-color: #1db954;
+  color: white;
+}
+
+.view-button:hover {
+  background-color: #1ed760;
+}
+
+.remove-button {
+  background-color: #ff4444;
+  color: white;
+}
+
+.remove-button:hover {
+  background-color: #ff6666;
+}
+
+.no-favorites {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #b3b3b3;
+  margin-top: 2rem;
+}

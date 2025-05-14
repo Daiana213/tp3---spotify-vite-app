@@ -17,6 +17,7 @@ const Header = () => {
         <div className="nav-left">
           <Link to="/search">Buscar Artistas</Link>
           <Link to="/favorites">Canciones Favoritas</Link>
+          <Link to="/favorite-artists">Artistas Favoritos</Link>
         </div>
         
         <div className="nav-center">

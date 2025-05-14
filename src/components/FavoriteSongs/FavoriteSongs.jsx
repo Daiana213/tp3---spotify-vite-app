@@ -18,7 +18,7 @@ const FavoriteSongs = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="favorite-songs-container">
       <h2>Canciones Favoritas</h2>
       {favoriteTracks.length === 0 ? (
         <p>No hay canciones favoritas</p>

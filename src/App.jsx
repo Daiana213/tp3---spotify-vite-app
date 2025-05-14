@@ -7,6 +7,7 @@ import AlbumDetail from './components/AlbumDetail/AlbumDetail';
 import FavoriteSongs from './components/FavoriteSongs/FavoriteSongs';
 import Header from './components/Header/Header';
 import './App.css';
+import FavoriteArtists from './components/FavoriteArtists/FavoriteArtists';
 
 // Componente para proteger rutas
 const ProtectedRoute = ({ children }) => {
@@ -68,6 +69,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <FavoriteSongs />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/favorite-artists" 
+              element={
+                <ProtectedRoute>
+                  <FavoriteArtists />
                 </ProtectedRoute>
               } 
             />

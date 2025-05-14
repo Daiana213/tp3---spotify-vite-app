@@ -20,5 +20,16 @@ body {
   display: flex;
   flex-direction: column;
 }
+ 
+h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
 
 /* Puedes dejar aquí utilidades globales o clases que se usen en toda la app */
