@@ -1,12 +1,22 @@
-# React + Vite
+SPA en React - Aplicación de Música con API de Spotify
+Aplicación desarrollada como parte del Trabajo Práctico #3.  
+Permite buscar artistas, ver sus álbumes y canciones, y marcar favoritos.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Funcionalidades implementadas
+- Búsqueda de artistas por nombre
+- Vista de detalle del artista con sus álbumes
+- Vista de detalle del álbum con canciones
+- Marcar artistas y canciones como favoritos
+- Vista para ver canciones favoritas
+- Botones para volver entre vistas
+- Pantalla de login para ingresar credenciales de la API y guardarlas en localStorage
+- Navegación entre vistas usando React Router
 
-Currently, two official plugins are available:
+Enlace a la aplicación: https://daiana213.github.io/tp3---spotify-vite-app/
+CREDENCIALES:
+CLIENT_ID: 8eeee12eba9643b4ae1243a9feb82c02
+CLIENT_SECRET: 75d58b03e96844b78c51d87db430f3a3
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Integrantes
+- Palacios Daiana
+- Vignolo Milagros
