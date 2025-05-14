@@ -41,7 +41,7 @@
   object-fit: cover;
 }
 
-.artist-name {
+.artist-card .artist-name {
   font-size: 1.1rem;
   color: #ffffff;
   margin: 0;
